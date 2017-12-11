@@ -1,0 +1,16 @@
+function outputArray = GetElementData(dataDesired)
+
+elementNames={'Al';'Ar';'B';'Be';'C';'Cl';'F';'H';'He';'Li';'Mg';'N';'Na';'Ne';'O';'P';'S';'Si'};
+elementGraphics={'r*';'g*';'b*';'r+';'g+';'b+';'rs';'gs';'bs';'r^';'g^';'b^';'ro';'go';'bo';'rp';'gp';'bp'};
+
+elementData=struct('Names',elementNames,'Graphics',elementGraphics);
+
+if ((isstr(dataDesired) && strcmpi(dataDesired,'all')) || (isa(dataDesired,'numeric') && dataDesired==1)))
+    outputArray=elementData;
+else if ((isstr(dataDesired) && strcmpi(dataDesired,'names')) || (isa(dataDesired,'numeric') && dataDesired==2)))
+    outputArray=elementData.Names;
+else if ((isstr(dataDesired) && strcmpi(dataDesired,'graphics')) || (isa(dataDesired,'numeric') && dataDesired==3)))
+    outputArray=elementData.Names;
+el
+
+end    

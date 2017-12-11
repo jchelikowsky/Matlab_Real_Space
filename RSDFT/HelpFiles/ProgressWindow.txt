@@ -1,0 +1,16 @@
+Progress Window Information
+
+Once the 'Start' button has been clicked,
+the Progress Window will open.  This window
+will show the current progress being made on the
+calculations in two ways.  At the bottom of the 
+window will be a progress bar.  NOTE: the progress
+bar determines the percentage completed by using 
+the SCF error.  Because the SCF error can increase, 
+the progress bar can go backwards.
+
+The second method provides more information.
+The text shows at what step the calculations are at.
+It also shows the current diagonalization method and
+the subsequent error.  Once the calculations are finished,
+the eigenvalues and energy statistics will be printed.

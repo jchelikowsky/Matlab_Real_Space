@@ -1,0 +1,46 @@
+The most recent modifications to Real Space Density 
+Function Theory have the purpose of decreasing the 
+time it takes to run the calculations.Some of the 
+optimizations used may not be compatible with all 
+computers,may not speed up the program much, or in 
+the worst case, may slow down execution.  This is why 
+a flag is made available to the user, allowing the
+user to decide which optimizations to use.  Level 0 
+optimization only uses MATLAB code.  This level should 
+be compatible with all recent versions of MATLAB.  
+The next step up is level 1 and this level allows the 
+use of mex files.  Mex files are binary files that have 
+been compiled from C code.  These mex files will 
+execute faster than their m file counterparts.  The 
+downside is that compatibility is not guaranteed.  
+
+The one potential problem is the lack of a MATLAB 
+compatible compiler.  The first time the user attempts 
+to compile the mex files, if MATLAB has not been setup,
+the user will be prompted to choose a compiler that is
+installed on the current computer.  If a compatible 
+compiler cannot be found, the compiling cannot continue.
+RSDFT is shipped with precompiled mex files, but if these
+do not execute properly, then the optimization level must
+be set to 0.
+
+There are two main reasons that a mex file might have 
+compatibility problems.The first is that the mex file
+was compiled for a different operating systemor architecture.
+The second problem is that mex files are not guaranteed to
+be compatible on a different version of MATLAB than the 
+version it was compiled on.  The only solution to these
+two problems is to recompile the mex files.  This can
+be done two ways.  Either run the script, compileMexFiles.m,
+or from the first graphical user interface window, click 
+the 'compile C code' button. 
+
+The user has two ways to control the optimization level.
+If the graphical user interface is being used, on the 
+first window, use the drop down menu near the bottom center
+of the window.  If the text based interface is in use, go
+into the file, include.m, and near the bottom should be
+a statement, OPTIMIZATIONLEVEL= #.  Replace the number 
+with the desired optimization level.  Note that the value
+ used set to the variable OPTIMIZATIONLEVEL in include.m 
+is used as the default value in the graphical user interface.

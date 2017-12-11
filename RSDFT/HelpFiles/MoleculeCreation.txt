@@ -1,0 +1,26 @@
+Creating Molecules for Use in RSDFT
+
+Option 1:
+Use the drop-down menu at the top left
+to select the element of the next atom.  Input
+the xyz coordinates of the atom in the 3 text boxes
+to the right.  Click 'Add Atom'.  The atom will be
+added to the list of atoms and will also be shown
+in the molecule visualization.  The molecule visualization
+can be rotated for a better view by left clicking and dragging.
+If a mistake is made, select the offending atoms from the list
+and click the 'Delete Selected Atom(s)' button.
+
+Once the molecule is done, it can be saved by clicking the
+'Save' button or selecting 'Save' from the file menu.
+Give the molecule a name and choose the file extension to
+use.  '.mat' is binary and can only be read by MATLAB, '.dat'
+is a text format and can be viewed by any text editor.
+
+
+Option 2:
+Click the button marked 'Load' or select 'Load'
+from the file menu.  Choose either '.mat' or '.dat'
+extension and select a previously created molecule.
+The atoms that make up the molecule will be added to
+the list and visualization. 

@@ -1,0 +1,35 @@
+Settings for Advanced Users
+
+The values set in include.m are the
+values that these settings will use when
+RSDFT is first started up.
+
+--Precondition CG: Control whether or not
+preconditioning is used.
+
+--Use Adpative Scheme: Controls whether
+or not certain perameters are changed during
+execution.  This is mainly used to speedup
+execution, but this speed up has two potential
+downsides.  The first is that the final eigenvalues 
+are slightly different and that under the wrong
+conditions, execution might take longer so use this
+option with care.
+
+--Enable Charge Density Visualization: Controls
+whether a visualization of the molecule's charge
+density is shown after execution is completed.
+
+--Diagonalization Method: Use drop-down menu
+to select which diagonalization method(s) are
+used.
+0 --> Lanczos 1st step and chebyshev filtering thereafter
+1 --> Lanczos all the time
+2 --> Full-Chebyshev subspace iteration first step
+      chebyshev filtering thereafter.
+
+
+--Polynomial Degree for Chebyshev filtering:
+Used to specify the degree of the Chebyshev
+polynomial.  10 is a good mix of speed and
+accuracy.

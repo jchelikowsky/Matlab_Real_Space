@@ -1,0 +1,11 @@
+Explaination of Charge Density Visualization
+
+	If the check box enabling the visualization is
+checked, once the calculations are finished, a
+new window showing a visualization of the charge density
+of the current molecule will open.  The way to interpret
+the graph is that the graph is showing a slice through the
+volume that is parallel to the xz plane. The y axis and colors 
+of the graph represent charge density values.  By using the 
+scroll bar on the right, different slices can be viewed.  
+The scroll bar on the bottom changes the y axis and color scale.

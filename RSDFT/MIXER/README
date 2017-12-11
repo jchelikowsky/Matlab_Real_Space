@@ -1,0 +1,41 @@
+
+This folder contains a set of multi-secant mixers (namely msecant1.m,
+msecant2.m, and msecant3.m) for RSDFT. The simple mixing code
+(simplemix.m) is also included.
+
+-----------------------------------------------------------------------
+CONTENTS:
+=========
+
+ ../mixer.m   : This file specifies which mixer to use (simplemix.m,
+                msecant1.m, msecant2.m, or msecant3.m).
+ includemix.m : This file sets the arguments for mixing (such as mixing
+                parameter, Broyden-like or EN-like, restarting factor).
+ simplemix.m  : Simple mixing with only the latest iterate.
+ msecant1.m   : Multi-secant mixing method, with update by minimizing
+                the change of approximate Jacobian in Frobenius norm.
+ msecant2.m   : Multi-secant mixing method, with update by minimizing
+                the change of approximate inverse Jacobian in Frobenius
+                norm.
+ msecant3.m   : A hybrid multi-secant mixing method, with update by
+                minimizing the change of approximate Jacobian or
+                inverse Jacobian depending on the secant errors in
+                Frobenius norm.
+ qinv.m       : Multi-secant mixing methods involve solving linear
+                systems with multiple right-hand sides. Here Household
+                QR factorization is used numerical stability while
+                computing the inverse.
+ qinv2.m      : One can use pseudo-inverse to increase the numerical
+                stability, by replacing qinv.m by qinv2.m. On the other
+                hand pseudo-inverse is computationally more expensive
+                (because of SVD).
+
+-----------------------------------------------------------------------
+
+Reference:
+Haw-ren Fang and Yousef Saad, "Two classes of multisecant methods for
+nonlinear acceleration." Report umsi-2007-100, Minnesota Supercomputer
+Institute, University of Minnesota, Minneapolis, MN, 2007.
+
+Please send problems / suggestions to {hrfang,saad}@cs.umn.edu .
+

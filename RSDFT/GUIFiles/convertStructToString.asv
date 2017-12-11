@@ -1,0 +1,12 @@
+function stringOfAtomData=convertStructToString(atomsStruct)
+
+lengthOfStructure=numel(atomsStruct);
+
+stringOfAtomData=[]
+
+for i=1:lengthOfStructure
+    coordinate=atomsStruct(i).Coordinate;
+    stringOfAtomData(i)=cellstr(strcat(atomsStruct(i).AtomElement,': ',...
+            num2str(coordinate(1)),', ',num2str(coordinate(2)),', ',num2str(coordinate(3))));
+end
+return

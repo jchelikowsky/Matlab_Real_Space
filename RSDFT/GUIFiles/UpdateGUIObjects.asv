@@ -1,0 +1,26 @@
+function success=UpdateGUIObjects(handles,AtomsInMolecule)
+
+success=1;
+
+% update the strings in the List to reflect changes in AtomsInMolecule
+cellArrayOfStrings=convertStructToString(AtomsInMolecule);
+set(handles.ListOfCurrentAtoms,'String',cellArrayOfStrings,'Value',1);       
+set(handles.ListOfCurrentAtoms,'Max',numel(cellArrayOfStrings));
+% Max-Min is the number of items that can be concurrently selected.
+% Min defaults to 1
+
+%TODO
+% update the visualization of the molecule to reflect changes in
+% AtomsInMolecule
+boxSize=.25
+x=[0 1 1 0 0 0;1 1 0 0 1 1;1 1 0 0 1 1;0 1 1 0 0 0];
+y=[0 0 1 1 0 0;0 1 1 0 0 0;0 1 1 0 1 1;0 0 1 1 1 1];
+z=[0 0 0 0 0 1;0 0 0 0 0 1;1 1 1 1 0 1;1 1 1 1 0 1];
+x=x*boxSize;
+y=y*.25;
+z=z*.25;
+
+x=x-
+
+
+return
