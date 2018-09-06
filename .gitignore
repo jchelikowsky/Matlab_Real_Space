@@ -1,0 +1,13 @@
+# Standard ignores
+*~
+*.pyc
+*.out
+*.mexa64
+wfn.dat
+errorlog.txt
+\#*#
+.#*
+.*.swp
+/TAGS
+.DS_Store
+.cproject
