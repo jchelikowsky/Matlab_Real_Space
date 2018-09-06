@@ -51,7 +51,6 @@ at=numel(Atoms);%at holds the number of elements in the molecule
 % this cell array holds all the output to the listbox
 % in the ProgessGUI figure
 barHandle=barh(handles.ProgressBar,0,0,1);
-set(barHandle,'EraseMode','xor');
 axis(handles.ProgressBar,[0 1 0 .1]);
 axis(handles.ProgressBar, 'off');
 
