@@ -3,6 +3,8 @@
 *.pyc
 *.out
 *.mexa64
+*.mexmaci
+*.mexglx
 wfn.dat
 errorlog.txt
 \#*#
