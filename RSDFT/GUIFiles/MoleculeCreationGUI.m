@@ -309,9 +309,17 @@ if (handles.calculationsInProgress==0)
         filePathName=horzcat(path,fileName);
 
         if (filterIndex==1)
-            save(horzcat(filePathName,'.mat'),'AtomsInMolecule');
+            if (filePathName(end-3:end)=='.mat')
+                save(filePathName,'AtomsInMolecule');
+            else
+                save(horzcat(filePathName,'.mat'),'AtomsInMolecule');
+            end
         elseif (filterIndex==2)
-            [fid,message] = fopen(horzcat(filePathName,'.dat'),'w');
+            if (filePathName(end-3:end)=='.dat')
+                [fid,message] = fopen(filePathName,'w');
+            else
+                [fid,message] = fopen(horzcat(filePathName,'.dat'),'w');
+            end
 
             if (fid==-1)
                 error(horzcat('Could not open file. ',message));
