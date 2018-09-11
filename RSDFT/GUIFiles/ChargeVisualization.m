@@ -88,40 +88,63 @@ end
 
 
 function updateSurf(position,data,handle)
-global enableOSCheckForVisualization
+global enableOSCheckForVisualization;
+global useIsosurface;
+global dataInterp;
+global firstView;
 if (enableOSCheckForVisualization==0 || isunix()==0)
-    % convert from the slider position to an index in the data
-    yIndex=round(position*size(data,2));
-    if (yIndex<1)
-        yIndex=1;
-    elseif (yIndex>size(data,2))
-        yIndex=size(data,2);
-    end
-
-
-    % get slice and save view window details so when
-    % redrawing, the view does not change
-    chargeDensitySlice=squeeze(data(:,yIndex,:));
-    [az, el]=view;
-
-    maxValue=max(max(max(data)));
-    minValue=min(min(min(data)));
-
     zoomValue=get(handle.zoomSlider,'Value');
+    [az, el]=view(handle.chargeVisualization);
+    if(useIsosurface)
+        if(isempty(dataInterp))
+            firstView = 1;
+            dataInterp=interp3(data,2,'cubic');
+        end
+        x=1:size(dataInterp,1);
+        zoomValue=(9*zoomValue + 1);
+        xyzlim = repmat([(length(x)+1)/2-round((length(x)-1)/zoomValue) (length(x)+1)/2+round((length(x)-1)/zoomValue)],1,3);
+        fprintf('zoom: %f, isovalue: %f\n',zoomValue,position);
+        cla(handle.chargeVisualization);
+        fv=isosurface(x,x,x,dataInterp,max(data(:))*position);
+        p = patch(handle.chargeVisualization,fv);
+        isonormals(x,x,x,dataInterp,p);
+        set(p,'FaceColor','red','EdgeColor','none');
+        daspect([1 1 1]);
+        view(handle.chargeVisualization,az,el); %axis tight
+        axis(handle.chargeVisualization,xyzlim);
+        if(firstView) 
+            camlight(handle.chargeVisualization,az,el);
+            lighting(handle.chargeVisualization,'gouraud');
+            firstView=1;
+        end 
+        
+    else
+        if (zoomValue==1)
+            zoomValue=0.999;
+        end
+        % convert from the slider position to an index in the data
+        yIndex=round(position*size(data,2));
+        if (yIndex<1)
+            yIndex=1;
+        elseif (yIndex>size(data,2))
+            yIndex=size(data,2);
+        end
 
-    diff=maxValue-minValue;
 
-    if (zoomValue==1)
-        zoomValue=0.999;
+        % get slice and save view window details so when
+        % redrawing, the view does not change
+        chargeDensitySlice=squeeze(data(:,yIndex,:));
+        maxValue=max(data(:));
+        minValue=min(data(:));
+        diff=maxValue-minValue;        % interp2 smooths the data by adding points
+        yInterpolation=interp2(chargeDensitySlice,1);
+        
+        surf(handle.chargeVisualization,yInterpolation);
+        axis(handle.chargeVisualization,[0, size(yInterpolation,1), 0, size(yInterpolation,2), minValue, maxValue-zoomValue*diff, minValue, maxValue-zoomValue*diff]);
+        view(handle.chargeVisualization,az,el);
+        shading(handle.chargeVisualization,'interp');
     end
-
-    % interp2 smooths the data by adding points
-    yInterpolation=interp2(chargeDensitySlice,1);
-
-    surf(handle.chargeVisualization,yInterpolation);
-    axis(handle.chargeVisualization,[0, size(yInterpolation,1), 0, size(yInterpolation,2), minValue, maxValue-zoomValue*diff, minValue, maxValue-zoomValue*diff]);
-    view(handle.chargeVisualization,az,el);
-    shading(handle.chargeVisualization,'interp');
+    drawnow
 else
     warndlg({'Visualization is disabled for unix machines due to it sometimes crashing the window manager'},'Visualization Disabled');
 end
