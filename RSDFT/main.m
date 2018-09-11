@@ -178,6 +178,7 @@ elseif (in_data==2)
        disp('File extension not recognized')
        return; %stop execution and return to command window
     end
+    if(exist('Z_charge')==0) Z_charge=0; end
 end
 
 
