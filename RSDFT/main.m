@@ -24,7 +24,9 @@ global CG_prec poldeg diagmeth adaptiveScheme
 %%%
 %%%   Units
 Ry=13.605698066;
-include;
+
+% imports a bunch of common flag settings
+settings;
 
 % check that variables hold vavlid values
 if (CG_prec~=0 && CG_prec~=1)

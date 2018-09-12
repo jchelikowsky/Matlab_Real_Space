@@ -74,8 +74,8 @@ guidata(hObject, handles);% needed to save AtomsInMolecule changes
 rotate3d(handles.VisualizationOfMolecule);
 
 % set GUI objects to state that reflect the values that are in the varibles
-% set in the script include.m
-% if statements check that values set in include.m are valid
+% set in the script settings.m
+% if statements check that values set in settings.m are valid
 if (CG_prec~=0 && CG_prec~=1)
     CG_prec=0;
 end

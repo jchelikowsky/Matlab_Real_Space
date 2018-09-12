@@ -13,7 +13,8 @@ clear all;
 % opengl can cause crashes on UNIX machines
 %opengl('neverselect');
 
-include;
+% imports a bunch of common flag settings
+settings;
 
 versionNumber=version;
 %get the first 2 digits of the version number, include decimal point
