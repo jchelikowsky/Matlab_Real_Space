@@ -1,6 +1,6 @@
 Settings for Advanced Users
 
-The values set in include.m are the
+The values set in settings.m are the
 values that these settings will use when
 RSDFT is first started up.
 

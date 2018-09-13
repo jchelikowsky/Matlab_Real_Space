@@ -39,8 +39,8 @@ The user has two ways to control the optimization level.
 If the graphical user interface is being used, on the 
 first window, use the drop down menu near the bottom center
 of the window.  If the text based interface is in use, go
-into the file, include.m, and near the bottom should be
+into the file, settings.m, and near the bottom should be
 a statement, OPTIMIZATIONLEVEL= #.  Replace the number 
 with the desired optimization level.  Note that the value
- used set to the variable OPTIMIZATIONLEVEL in include.m 
+ used set to the variable OPTIMIZATIONLEVEL in settings.m 
 is used as the default value in the graphical user interface.

@@ -3,6 +3,7 @@
 
 global CG_prec poldeg diagmeth adaptiveScheme enableChargeDensityVisualization
 global OPTIMIZATIONLEVEL;
+global useIsosurface;
 
 % inlcude paths here so that main.m can also run on its own!
 path(path,'MIXER');
@@ -51,6 +52,9 @@ end
 % 0 is text based
 % not 0 is graphical user interface
 userInterfaceControl=1;
+
+% Use isosurface instead of contour mapping
+useIsosurface = 1;
 
 % 0= Only use MATLAB code
 % 1= Use some precompiled c code
