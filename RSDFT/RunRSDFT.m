@@ -25,7 +25,7 @@ function [rhoGrid]=RunRSDFT(Atoms,handles,Z_charge)
 %%%   Units
 Ry=13.605698066;
 
-% get variables set in include.m
+% get variables set in settings.m
 global CG_prec poldeg diagmeth adaptiveScheme
 % check that variables hold vavlid values
 if (CG_prec~=0 && CG_prec~=1)

@@ -24,7 +24,9 @@ global CG_prec poldeg diagmeth adaptiveScheme
 %%%
 %%%   Units
 Ry=13.605698066;
-include;
+
+% imports a bunch of common flag settings
+settings;
 
 % check that variables hold vavlid values
 if (CG_prec~=0 && CG_prec~=1)
@@ -178,6 +180,7 @@ elseif (in_data==2)
        disp('File extension not recognized')
        return; %stop execution and return to command window
     end
+    if(exist('Z_charge')==0) Z_charge=0; end
 end
 
 
