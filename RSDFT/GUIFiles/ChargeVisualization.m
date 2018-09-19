@@ -91,7 +91,7 @@ function updateSurf(position,data,handle)
 global enableOSCheckForVisualization;
 global useIsosurface;
 global dataInterp;
-global firstView;
+global firstView thisCam;
 if (enableOSCheckForVisualization==0 || isunix()==0)
     zoomValue=get(handle.zoomSlider,'Value');
     if(useIsosurface)
@@ -113,9 +113,11 @@ if (enableOSCheckForVisualization==0 || isunix()==0)
         view(handle.chargeVisualization,az,el); %axis tight
         axis(handle.chargeVisualization,xyzlim);
         if(firstView) 
-            camlight(handle.chargeVisualization,az,el);
+            thisCam = camlight(az,el);
             lighting(handle.chargeVisualization,'gouraud');
-            firstView=1;
+            firstView=0;
+        else
+            thisCam = camlight(az,el);
         end 
         
     else
