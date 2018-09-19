@@ -1,9 +1,12 @@
 # Matlab_Real_Space
 Electronic structure code for molecules and clusters
 
-Run `RSDFT` inside the RSDFT/ directory for a GUI.
+Run `RSDFT` inside the RSDFT/ directory for a GUI. Running
+`main` will instead run without any GUI, and should be 
+considered a fall back method. The included help assumes use of the GUI.
 
-Option 1:
+## Manually Creating a Molecule
+
 Use the drop-down menu at the top left
 to select the element of the next atom.  Input
 the xyz coordinates of the atom in the 3 text boxes
@@ -14,18 +17,22 @@ can be rotated for a better view by left clicking and dragging.
 If a mistake is made, select the offending atoms from the list
 and click the 'Delete Selected Atom(s)' button.
 
+## Saving a Molecule
 Once the molecule is done, it can be saved by clicking the
 'Save' button or selecting 'Save' from the file menu.
 Give the molecule a name and choose the file extension to
 use.  '.mat' is binary and can only be read by MATLAB, '.dat'
 is a text format and can be viewed by any text editor.
 
-Option 2:
+## Loading a Previously Saved Molecule
+
 Click the button marked 'Load' or select 'Load'
 from the file menu.  Choose either '.mat' or '.dat'
 extension and select a previously created molecule.
 The atoms that make up the molecule will be added to
 the list and visualization. 
+
+## Solving the problem
 
 Once the 'Start' button has been clicked,
 the Progress Window will open.  This window
@@ -56,7 +63,8 @@ The next step up is level 1 and this level allows the
 use of mex files.  Mex files are binary files that have 
 been compiled from C code.  These mex files will 
 execute faster than their m file counterparts.  The 
-downside is that compatibility is not guaranteed.  
+downside is that compatibility is not guaranteed. 
+*MEX Files are currently unsupported* 
 
 # Settings
 
@@ -64,9 +72,12 @@ The values set in RSDFTsettings.m are the
 values that these settings will use when
 RSDFT is first started up.
 
---Enable Charge Density Visualization: Controls
+* Enable Charge Density Visualization: Controls
 whether a visualization of the molecule's charge
 density is shown after execution is completed.
+
+* useIsosurface: {1 | [0]} - determines whether visualization uses isosurface
+rendering methods or contour rendering.
 
 # Visualization of Charge Density
 Explaination of Charge Density Visualization
@@ -82,10 +93,10 @@ scroll bar on the right, different slices can be viewed.
 The scroll bar on the bottom changes the y axis and color scale.
 
 # Advanced Settings (Unsupported)
---Precondition CG: Control whether or not
+* Precondition CG: Control whether or not
 preconditioning is used.
 
---Use Adpative Scheme: Controls whether
+* Use Adpative Scheme: Controls whether
 or not certain perameters are changed during
 execution.  This is mainly used to speedup
 execution, but this speed up has two potential
@@ -94,7 +105,7 @@ are slightly different and that under the wrong
 conditions, execution might take longer so use this
 option with care.
 
---Diagonalization Method: Use drop-down menu
+* Diagonalization Method: Use drop-down menu
 to select which diagonalization method(s) are
 used.
 0 --> Lanczos 1st step and chebyshev filtering thereafter
@@ -102,7 +113,7 @@ used.
 2 --> Full-Chebyshev subspace iteration first step
       chebyshev filtering thereafter.
 
---Polynomial Degree for Chebyshev filtering:
+* Polynomial Degree for Chebyshev filtering:
 Used to specify the degree of the Chebyshev
 polynomial.  10 is a good mix of speed and
 accuracy.
