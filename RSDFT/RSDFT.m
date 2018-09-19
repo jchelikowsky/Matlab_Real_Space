@@ -14,7 +14,7 @@ clear all;
 %opengl('neverselect');
 
 % imports a bunch of common flag settings
-settings;
+RSDFTsettings;
 
 versionNumber=version;
 %get the first 2 digits of the version number, include decimal point

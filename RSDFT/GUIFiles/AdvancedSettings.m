@@ -162,7 +162,7 @@ optimizeCopy=OPTIMIZATIONLEVEL;
 visualizationCopy=enableChargeDensityVisualization;
 
 
-settings;
+RSDFTRSDFTsettings;
 % set GUI objects to state that reflect the values that are in the varibles
 % set in the script settings.m
 % if statements check that values set in settings.m are valid
