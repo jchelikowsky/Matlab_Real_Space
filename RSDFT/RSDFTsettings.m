@@ -54,7 +54,7 @@ end
 userInterfaceControl=1;
 
 % Use isosurface instead of contour mapping
-useIsosurface = 1;
+useIsosurface = 0;
 
 % 0= Only use MATLAB code
 % 1= Use some precompiled c code
