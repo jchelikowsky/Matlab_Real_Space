@@ -241,9 +241,9 @@ end
 %%%%  nev is the number of eigenvalues to be found
 %%%%
 h=hmin;
-num_states=0.6*zelec;
-if num_states < 8;
-    num_states=8;
+num_states=round(0.7*zelec+0.5);
+if num_states < 16
+    num_states=16;
 end
 nev=num_states;
 
