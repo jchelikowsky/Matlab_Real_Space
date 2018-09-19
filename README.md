@@ -1,7 +1,12 @@
 # Matlab_Real_Space
 Electronic structure code for molecules and clusters
 
-Run `RSDFT` inside the RSDFT/ directory for a GUI. Running
+# Author's Note
+TO-DO
+
+# Starting the Program
+
+Run MATLAB and then `RSDFT` inside the RSDFT/ directory for a GUI. Running
 `main` will instead run without any GUI, and should be 
 considered a fall back method. The included help assumes use of the GUI.
 
