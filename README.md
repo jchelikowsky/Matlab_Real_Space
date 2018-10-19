@@ -2,7 +2,7 @@
 Electronic structure code for molecules and clusters
 
 # Author's Note
-TO-DO
+TO-DO - Associated with <Book>
 
 # Starting the Program
 
