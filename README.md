@@ -2,12 +2,11 @@
 Electronic structure code for atoms, molecules, clusters and nanocrystals.  
 
 # Author's Note
-For background material see:  Introductory Quantum Mechanics with MATLAB: For Atoms, Molecules, Clusters, and Nanocrystals by James R. Chelikowsky.  
+For background material see:  Introductory Quantum Mechanics with MATLAB: For Atoms, Molecules, Clusters, and Nanocrystals by James R. Chelikowsky.  The book is now available on Amazon.  Please consider purchasing it.  
 
 # Starting the Program
 
-Run MATLAB and then `RSDFT` inside the RSDFT/ directory for a GUI. Running
-`main` will instead run without any GUI. The included help assumes use of the GUI.
+Run MATLAB and then `RSDFT` inside the RSDFT/ directory for a GUI. Running`main` will instead run without any GUI. The included help assumes use of the GUI.
 
 ## Entering coordinates of the system of interest.
 
@@ -16,23 +15,16 @@ added to the list of atoms and will also be shown in the molecule visualization.
 
 ## Saving your entered coordinates. 
 Once the coordinates for an atom, cluster, molecule or nanocrystal are enetered is done, the coordinates can be saved by clicking the
-'Save' button or selecting 'Save' from the file menu.   Give the system a name and choose the file extension to
-use.  '.mat' is binary and can only be read by MATLAB, '.dat' is a text format and can be viewed by any text editor.
+'Save' button or selecting 'Save' from the file menu.   Give the system a name and choose the file extension to use.  '.mat' is binary and can only be read by MATLAB, '.dat' is a text format and can be viewed by any text editor.
 
 ## Loading a previously saved system. 
 
-Click the button marked 'Load' or select 'Load' from the file menu.  Choose either '.mat' or '.dat' extension and select a previously created system. The atoms that make up the molecule will be added to the list and visualization. 
+Click the button marked 'Load' or select 'Load' from the file menu.  Choose either '.mat' or '.dat' extension and select a previously created system. The atoms that make up the system will be added to the list and visualization. 
 
 ## Solving the problem
 
-Once the 'Start' button has been clicked,
-the Progress Window will open.  This window
-will show the current progress being made on the
-calculations in two ways.  At the bottom of the 
-window will be a progress bar.  NOTE: the progress
-bar determines the percentage completed by using 
-the SCF error.  Because the SCF error can increase, 
-the progress bar can go backwards.
+Once the 'Start' button has been clicked, the Progress Window will open.  This window will show the current progress being made on the
+calculations in two ways.  At the bottom of the  window will be a progress bar.  NOTE: the progress bar determines the percentage completed by using a specified error tolerance in the self-consistent field (SCF).  `Because the SCF error can increase (or go the wrong way), the progress bar can go backwards!
 
 The second method provides more information.
 The text shows at what step the calculations are at.
