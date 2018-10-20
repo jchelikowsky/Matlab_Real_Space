@@ -12,7 +12,7 @@ Run MATLAB and then `RSDFT` inside the RSDFT/ directory for a GUI. Running`main`
 
 ## Entering coordinates of the system of interest.
 
-Use the drop-down menu at the top left to select the element of the next atom.  Input the x,y,z coordinates of the atom in the 3 text boxes to the right.  The coordinates need to be in atomic units!  (1 a.u. is 0.5292 A).   Click 'Add Atom'.  The atom will be
+Use the drop-down menu at the top left to select the element of the next atom.  Input the x,y,z coordinates of the atom in the three  text boxes to the right.  The coordinates need to be in atomic units!  (1 a.u. is 0.5292 A).   Click 'Add Atom'.  The atom will be
 added to the list of atoms and will also be shown in the molecule visualization.  The molecule visualization can be rotated for a better view by left clicking and dragging. If a mistake is made, select the offending atoms from the list and click the 'Delete Selected Atom(s)' button.  Individual atoms can be done too, e.g., putting the atom at the origin.  Only elements in the first two rows of the periodic table are available. 
 
 ## Saving your entered coordinates. 
