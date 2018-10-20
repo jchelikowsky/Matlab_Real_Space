@@ -23,7 +23,9 @@ Once the coordinates for an atom, cluster, molecule or nanocrystal are enetered 
 
 Click the button marked 'Load' or select 'Load' from the file menu.  Choose either '.mat' or '.dat' extension and select a previously created system. The atoms that make up the system will be added to the list and visualization. 
 
-## Preloaded molecules.   Pre-loaded molecular coordinates are available for some representaive molecules.  Solutions for these molecules have been checked and should work.  Other molecular systems will likely work, but there can be come issues.  For example, the silicon or carbon dimer may not converge for some bond lengths.   
+## Preloaded molecules.   
+
+Pre-loaded molecular coordinates are available for some representaive molecules.  Solutions for these molecules have been checked and should work.  Other molecular systems will likely work, but there can be come issues.  For example, the silicon or carbon dimer may not converge for some bond lengths.   
 
 
 ## Solving the problem
