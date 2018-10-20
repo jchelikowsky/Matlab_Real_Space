@@ -1,41 +1,27 @@
 # Matlab_Real_Space
-Electronic structure code for molecules and clusters
+Electronic structure code for atoms, molecules, clusters and nanocrystals.  
 
 # Author's Note
-TO-DO - Associated with <Book>
+For background material see:  Introductory Quantum Mechanics with MATLAB: For Atoms, Molecules, Clusters, and Nanocrystals by James R. Chelikowsky.  
 
 # Starting the Program
 
 Run MATLAB and then `RSDFT` inside the RSDFT/ directory for a GUI. Running
-`main` will instead run without any GUI, and should be 
-considered a fall back method. The included help assumes use of the GUI.
+`main` will instead run without any GUI. The included help assumes use of the GUI.
 
-## Manually Creating a Molecule
+## Entering coordinates of the system of interest.
 
-Use the drop-down menu at the top left
-to select the element of the next atom.  Input
-the xyz coordinates of the atom in the 3 text boxes
-to the right.  Click 'Add Atom'.  The atom will be
-added to the list of atoms and will also be shown
-in the molecule visualization.  The molecule visualization
-can be rotated for a better view by left clicking and dragging.
-If a mistake is made, select the offending atoms from the list
-and click the 'Delete Selected Atom(s)' button.
+Use the drop-down menu at the top left to select the element of the next atom.  Input the x,y,z coordinates of the atom in the 3 text boxes to the right.  The coordinates need to be in atomic units!  (1 a.u. is 0.5292 A).   Click 'Add Atom'.  The atom will be
+added to the list of atoms and will also be shown in the molecule visualization.  The molecule visualization can be rotated for a better view by left clicking and dragging. If a mistake is made, select the offending atoms from the list and click the 'Delete Selected Atom(s)' button.  Individual atoms can be done too, e.g., putting the atom at the origin.  Only elements in the first two rows of the periodic table are available. 
 
-## Saving a Molecule
-Once the molecule is done, it can be saved by clicking the
-'Save' button or selecting 'Save' from the file menu.
-Give the molecule a name and choose the file extension to
-use.  '.mat' is binary and can only be read by MATLAB, '.dat'
-is a text format and can be viewed by any text editor.
+## Saving your entered coordinates. 
+Once the coordinates for an atom, cluster, molecule or nanocrystal are enetered is done, the coordinates can be saved by clicking the
+'Save' button or selecting 'Save' from the file menu.   Give the system a name and choose the file extension to
+use.  '.mat' is binary and can only be read by MATLAB, '.dat' is a text format and can be viewed by any text editor.
 
-## Loading a Previously Saved Molecule
+## Loading a previously saved system. 
 
-Click the button marked 'Load' or select 'Load'
-from the file menu.  Choose either '.mat' or '.dat'
-extension and select a previously created molecule.
-The atoms that make up the molecule will be added to
-the list and visualization. 
+Click the button marked 'Load' or select 'Load' from the file menu.  Choose either '.mat' or '.dat' extension and select a previously created system. The atoms that make up the molecule will be added to the list and visualization. 
 
 ## Solving the problem
 
