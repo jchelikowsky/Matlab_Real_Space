@@ -224,8 +224,13 @@ void mexFunction( int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[] ){
         }
         /*p = z + bet * p;*/
     }
+
+    plhs[0]=mxCreateDoubleMatrix(0,0,mxREAL);
+    tempPointer=mxMalloc(mxGetM(x)*sizeof(double));
+    mxSetPr(plhs[0],memcpy(tempPointer,mxGetPr(x),mxGetM(x)*sizeof(double)));
+    mxSetM(plhs[0],mxGetM(x));
+    mxSetN(plhs[0],mxGetN(x));
     
-    plhs[0]=x;
     plhs[1]=mxCreateDoubleScalar(its);
     
     return;
