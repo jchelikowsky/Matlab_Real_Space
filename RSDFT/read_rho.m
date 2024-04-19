@@ -36,9 +36,4 @@ camlight
 lighting gouraud
 
 
-
-
-
-
-
 fclose(wfnid);

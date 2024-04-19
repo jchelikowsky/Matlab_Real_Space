@@ -626,8 +626,17 @@ for i = 1:nev
     fwrite(wfnid, W(:, i), 'double');
 end
 
-fclose(wfnid);
+% write the atomic structure in wfn.dat
+fwrite(wfnid, N_types, 'uint32' );
+for i=1:N_types
+    xyz = Atoms(i).coord;
+    fwrite(wfnid, length(xyz(:,1)), 'uint32' );
+    for j=1:length(xyz(:,1))
+        fwrite(wfnid, xyz(j, :), 'double');
+    end
+end
 
+fclose(wfnid);
 
 fclose(fid); %% Close output file
 
