@@ -46,8 +46,10 @@ for i=1:N_types
     [na]=fread(wfnid, 1, 'uint32');
     for j=1:na
         xyz=fread(wfnid,3,"double");
-        hold on;
-        plot(xyz(1),xyz(2),'o','MarkerFaceColor','k','Markersize',4)
+        if (xyz(3) < domain.h * 0.5 && xyz(3) > -domain.h * 0.5)
+            hold on;
+            plot(xyz(1),xyz(2),'o','MarkerFaceColor','k','Markersize',4)
+        end
     end
 end
 
