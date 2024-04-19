@@ -26,7 +26,7 @@ V=reshape(rho,pot_length_cr,pot_length_cr,pot_length_cr);
 
 xm=max(rho)
 % C60 used fv=isosurface(x,y,z,V,xm*0.05);
-fv=isosurface(x,y,z,V,xm*0.9);
+fv=isosurface(x,y,z,V,xm*0.5);
 p = patch(fv);
 isonormals(x,y,z,V,p);
 set(p,'FaceColor','red','EdgeColor','none');
